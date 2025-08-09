@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🕆 Sustainable Crusade Network – Christian Radio</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #000;
+      color: #eee;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Branding: Consistent Style for "Sustainable Crusade Network" */
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff9100;
+      text-shadow: 0 0 10px rgba(255, 145, 0, 0.8),
+                   0 0 20px rgba(255, 145, 0, 0.6),
+                   0 0 30px rgba(255, 145, 0, 0.4);
+      letter-spacing: 0.5px;
+    }
+
+    /* Hero 1: Background Image with Glowing Text */
+    .hero-1 {
+      position: relative;
+      height: 80vh;
+      background: url('https://www.deseret.com/resizer/dEQHULAO23Q4l7VhWHsT-yEAwm8=/arc-photo-deseretnews/arc2-prod/public/MULKNMR4YKRMIHAEF7X3FQPHLE.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-1::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Slight overlay for readability */
+      z-index: 1;
+    }
+    .hero-1-content {
+      z-index: 2;
+      padding: 2rem;
+    }
+    .hero-1 h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Music Player Section */
+    .player-section {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background-color: #0a0a0a;
+    }
+    .player-container {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(255, 145, 0, 0.2);
+      padding-top: 10px; /* ← Adds 10px space above the logo */
+    }
+    .player-content {
+      padding: 1.8rem;
+    }
+    #now-playing {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      min-height: 22px;
+      font-weight: 500;
+      text-shadow: 0 0 5px rgba(255, 145, 0, 0.4);
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      padding: 12px 20px;
+      background: #ff9100;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .btn:hover {
+      background: #e68200;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* Mission Section */
+    .mission {
+      padding: 3rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+    .mission h3 {
+      color: #ff9100;
+      margin: 1.5rem 0 0.8rem;
+      font-size: 1.6rem;
+    }
+    .mission p {
+      margin-bottom: 1rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    .mission em {
+      color: #aaa;
+    }
+
+    /* Hero 2: Two-Column Section */
+    .hero-2 {
+      padding: 4rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #0a0a0a;
+      gap: 2rem;
+    }
+    .hero-2-img {
+      flex: 1;
+      min-width: 300px;
+      height: 400px;
+      background: url('https://www.dashhouse.com/content/images/size/w960/2024/08/worship.jpg') no-repeat center;
+      background-size: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .hero-2-text {
+      flex: 1;
+      min-width: 300px;
+      color: #fff;
+      padding: 0 1rem;
+    }
+    .hero-2-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 2rem 1.5rem;
+      background-color: #000;
+      color: #777;
+      font-size: 0.85rem;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+    /* Player Logo*/
+
+    .player-logo {
+      margin-top: 10px;
+      width: 80px;
+      height: 80px;
+      background-image: url('https://shorturl.at/RTJNg ');
+      background-size: cover;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      border: 2px solid #ff9100;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-1 h1 {
+        font-size: 2.2rem;
+      }
+      .hero-2 {
+        flex-direction: column;
+      }
+      .hero-2-img {
+        width: 100%;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero 1: Background Image -->
+  <section class="hero-1">
+    <div class="hero-1-content">
+      <h1><span class="brand">🕆 Sustainable Crusade Network</span></h1>
+    </div>
+  </section>
+
+  <!-- Music Player Section -->
+  <section class="player-section">
+    <div class="player-container">
+        <div class="player-logo"></div>
+      <div class="player-content">
+        <p id="now-playing">Now Playing: Loading...</p>
+        <div class="controls">
+          <button class="btn" onclick="previousSong()">⏮️ Prev</button>
+          <button class="btn" onclick="playRadio()">▶️ Play</button>
+          <button class="btn" onclick="pauseRadio()">⏸️ Pause</button>
+          <button class="btn" onclick="nextSong()">⏭️ Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hidden YouTube Player -->
+  <div id="player" style="display:none;"></div>
+
+  <!-- Mission Statement -->
+  <section class="mission">
+    <h3><span class="brand">Sustainable Crusade Network</span></h3>
+    
+    <p><strong>At Sustainable Crusade Network, our goal is to help, empower, and uplift people.</strong> While sustainable development traditionally focuses on economic, social, and environmental aspects, we recognize that spiritual well-being is an essential dimension of true development. We believe that with strong spiritual guidance, individuals are more likely to make the right choices.</p>
+
+    <p>We also believe in the transformative power of music to inspire positive change and nurture righteousness. Our mission is to promote ethical values, reduce crime, and encourage spiritual growth through the uplifting influence of Christian music.</p>
+
+    <p>By providing easy access to inspiring music through our platform, we aim to support individuals on their journey toward making better decisions and building stronger, more compassionate communities. This initiative reflects our commitment to charitable work by using creative and accessible methods to make a positive impact in people’s lives.</p>
+
+    <p>As a non-profit organization, we operate with integrity and purpose, leveraging free resources and technology to amplify messages of hope, faith, and goodness in society.</p>
+
+    <h3>Disclaimer:</h3>
+    <p><em>All music featured on Sustainable Crusade Network is copyrighted material made available under fair use for personal, non-commercial streaming purposes. We do not own or claim any rights to the music; all rights and credit belong to the original content creators and artists. The music is sourced from publicly available platforms and streamed solely for inspirational and entertainment purposes.</em></p>
+  </section>
+
+  <!-- Hero 2: Two-Column Section -->
+  <section class="hero-2">
+    <div class="hero-2-img" aria-label="Worship"></div>
+    <div class="hero-2-text">
+      <p>Every day, we hear stories of how lives are transformed through God's word on the radio — whether encouraging and offering hope during a dark time in their life or bringing a non-believer into the light. By joining your fellow listeners, you can make this impact too.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Sustainable Crusade Network is a non-profit, empowerment project and does not monetize copyrighted content for profit. Our purpose is not financial gain, but to harness the power of music as a positive influence and beacon of hope in people’s lives.</p>
+  </footer>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    let player;
+    const playlistId = "PLcS2-mLKLrYerfr1J-3-6_6e9P5_7K3hJ"; // Your playlist
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        playerVars: {
+          listType: 'playlist',
+          list: playlistId,
+          controls: 0,
+          modestbranding: 1,
+          rel: 0,
+          enablejsapi: 1,
+          origin: window.location.origin
+        },
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      updateSongTitle();
+      player.playVideo(); // Auto-play if allowed
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        updateSongTitle();
+      }
+    }
+
+    function updateSongTitle() {
+      const data = player.getVideoData();
+      const title = data.title ? (data.title.length > 50 ? data.title.substring(0, 50) + '...' : data.title) : "Unknown";
+      document.getElementById("now-playing").textContent = `🎶 Now Playing: ${title}`;
+    }
+
+    function playRadio() {
+      player.playVideo();
+    }
+
+    function pauseRadio() {
+      player.pauseVideo();
+    }
+
+    function nextSong() {
+      player.nextVideo();
+      document.getElementById("now-playing").textContent = "⏭️ Next track loading...";
+    }
+
+    function previousSong() {
+      player.previousVideo();
+      document.getElementById("now-playing").textContent = "⏮️ Previous track loading...";
+    }
+  </script>
+
+</body>
+</html>
